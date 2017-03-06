@@ -16,9 +16,10 @@ html
         .content
           .information
             form(method="POST", action="/invite")#join-form.form
+              input(type="text", name="name", placeholder="#{__('ENTER_NAME')}")#slack-name.field
               input(type="email", name="email", placeholder="#{__('ENTER_EMAIL')}")#slack-email.field
-              if tokenRequired
-                input(type="text", name="token", placeholder="#{__('ENTER_TOKEN')}")#slack-token.field
+              input(type="text", name="company", placeholder="#{__('ENTER_COMPANY')}")#slack-company.field
+              input(type="text", name="school", placeholder="#{__('ENTER_SCHOOL')}")#slack-school.field
               input(type="submit", value="Join").submit
     script.
       var tokenRequired = #{tokenRequired};

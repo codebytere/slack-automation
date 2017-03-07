@@ -1,7 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const request = require('request');
+const airtable = require('airtable');
 const config = require('../config');
+
+const base = new airtable({apiKey: config.airtableKey}).base('app1SGgO3Rp5BuarJ');
 
 router.get('/', function(req, res) {
     res.setLocale(config.locale);
@@ -10,6 +13,22 @@ router.get('/', function(req, res) {
 
 router.post('/invite', function(req, res) {
     if (req.body.email) {
+
+        // Post information to Airtable base
+        base('Community_Members').create({
+            name: req.body.name,
+            email: req.body.email,
+            company: req.body.company,
+            school: req.body.school,
+        }, function(err, record) {
+            if (err) {
+                console.error(err);
+                return;
+            }
+            console.log(record);
+        });
+
+        // Post data to the slack endpoint
         request.post({
             url: 'https://' + config.slackUrl + '/api/users.admin.invite',
             form: {
@@ -22,7 +41,9 @@ router.post('/invite', function(req, res) {
             if (err) {
                 return res.send('Error:' + err);
             }
+
             const parsed_body = JSON.parse(body);
+
             if (parsed_body.ok) {
                 res.render('result', {
                     community: config.community,
@@ -48,7 +69,9 @@ router.post('/invite', function(req, res) {
                     message: 'Failed! ' + error,
                     isFailed: true,
                 });
+
             }
+            return '';
         });
     } else {
         const errMsg = [];

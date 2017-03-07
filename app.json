@@ -1,6 +1,6 @@
 {
   "name": "Slack Invite Automation",
-  "description": "A tiny web application to invite a user into your slack team.",
+  "description": "A web application to invite a user into your slack team.",
   "repository": "https://github.com/outsideris/slack-invite-automation",
   "keywords": ["node", "slack", "invite"],
   "env": {
@@ -9,17 +9,12 @@
       "value": "YOUR TEAM NAME"
     },
     "SLACK_URL": {
-      "description": "Your slack url(ex: socketio.slack.com)",
+      "description": "Your slack url",
       "value": "YOUR-TEAM.slack.com"
     },
     "SLACK_TOKEN": {
       "description": "access token of slack, You can generate it in https://api.slack.com/web#auth",
       "value": ""
     },
-    "INVITE_TOKEN": {
-      "description": "Shared invite token used to get access. Leave blank if you don't want users to have to provide a token.",
-      "value": "",
-      "required": false
-    }
   }
 }

@@ -31,7 +31,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
-    background: #fff url(../images/san-francisco.jpg) no-repeat center center fixed;
+    background: #fff url(../images/main.jpg) no-repeat center center fixed;
     background-size: cover;
     height: 100%;
     width: 100%;
@@ -61,23 +61,23 @@ html, body {
 
 h1 {
     font-family: 'Open Sans', sans-serif;
-    color: #fff;
+    color: black;
     text-align: center;
     margin: 0 0 10px 0;
     font-size: 38px;
     font-weight: 700;
-	text-shadow: 2px 2px black;
+	text-shadow: 2px 2px white;
 }
 
-h1 strong {
-
-}
 
 h2 {
     text-align: center;
     font-size: 25px;
-    color: #ffffff;
-	text-shadow: 1px 1px black;
+    color: black;
+	text-shadow: 1px 1px white;
+    font-weight: bold;
+    max-width: 80%;
+    margin: auto;
 }
 
 h2 strong {
@@ -112,12 +112,11 @@ h3 {
 }
 
 .field {
-    background: url(../images/field.png) repeat;
     width: 448px;
     border: 1px solid white;
     font-family: 'Lato', sans-serif;
     font-size: 16px;
-    color: white;
+    color: black;
     padding: 15px;
     margin-bottom: 15px;
     outline: none;
@@ -129,7 +128,7 @@ h3 {
     padding: 14px;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 560px) {
     .information {
         width: 100%;
     }
@@ -165,6 +164,23 @@ h3 {
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
+}
+
+*::-webkit-input-placeholder {
+    color: black;
+    opacity: 0.7;
+}
+*:-moz-placeholder {
+    color: black;
+    opacity: 0.7;
+}
+*::-moz-placeholder {
+    color: black;
+    opacity: 0.7;
+}
+*:-ms-input-placeholder {
+    color: black;
+    opacity: 0.7;
 }
 
 .submit:hover {

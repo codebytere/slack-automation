@@ -32,7 +32,7 @@ router.post('/invite', (req, res) => {
       set_active: true,
     },
   }, (err, httpResponse, body) => {
-    if (err) { return res.send('Error:' + err); }
+    if (err) { return res.send(`Error: ${err}`); }
     const parsed_body = JSON.parse(body);
 
     if (parsed_body.ok) {
@@ -50,11 +50,11 @@ router.post('/invite', (req, res) => {
       } else if (error === 'invalid_email') {
         error = 'The email you entered is an invalid email.';
       } else if (error === 'invalid_auth') {
-        error = 'Something has gone wrong. Please contact a SFBayInterns2017 admin via Facebook or email.';
+        error = 'Error. Please contact an admin via Facebook or email.';
       }
 
       res.render('result', {
-        message: 'Failed! ' + error,
+        message: `Failed! ${error}`,
         isFailed: true,
       });
     }

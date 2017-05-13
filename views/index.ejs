@@ -4,37 +4,40 @@
 <head>
   <meta http-equiv="Content-Type" , content="text/html; charset=utf-8" )/>
   <meta name="viewport" content="width=device-width initial-scale=1" />
-  <title>Join the SF Bay Interns 2017 community on Slack!"</title>
-  <link href="styles/style.css" rel="stylesheet" type="text/css" />
+  <title> Join the SF Bay Interns 2017 community on Slack! </title>
+  <link rel="stylesheet/less" type="text/css" href="styles/styles.less" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.js"></script>
+</head>
 
-  <body>
-    <div id="wrapper">
-      <div class="main">
-        <div class="header">
-          <h1>SF Bay Interns 2017<h1>
-          <h2>Enter your email below to join SF Bay Interns 2017 on Slack!</h2>
-        </div>
-        <div class="content">
-          <div class="information">
-            <form method="POST" action="/invite" id="join-form" class="form">
-              <input required type="text" name="name" placeholder="Enter Your Name" id="slack-name" class="field" >
-              <input required type="email" name="email" placeholder="Enter Your Email Address" id="slack-email" class="field">
-              <input required type="text" name="company" placeholder="What company are you working at?" id="slack-company" class="field">
-              <input required type="text" name="school" placeholder="What school do or did you attend?" id="slack-school" class="field">
-              <input type="submit" class="submit" value="Join The Community">
-            </form>
-          </div>
+<body>
+  <div id="wrapper">
+    <div class="main">
+      <div class="header">
+        <h1>SF Bay Interns 2017<h1>
+        <h2>Enter your email below to join SF Bay Interns 2017 on Slack!</h2>
+      </div>
+      <div class="content">
+        <div class="information">
+          <form method="POST" action="/invite" id="join-form" class="form">
+            <input required type="text" name="name" placeholder="Enter Your Full Name" id="slack-name" class="field" >
+            <input required type="email" name="email" placeholder="Enter Your Email Address" id="slack-email" class="field">
+            <input required type="text" name="company" placeholder="What company are you working at?" id="slack-company" class="field">
+            <input required type="text" name="school" placeholder="What school do or did you attend?" id="slack-school" class="field">
+            <input type="submit" class="submit" value="Join The Community">
+          </form>
         </div>
       </div>
     </div>
-    <script>
-      const form = document.getElementById('join-form');
-      const email = document.getElementById('slack-email');
-      const token = document.getElementById('slack-token');
-      form.addEventListener('submit', (evt) => {
-        if (!email.value) { evt.preventDefault(); }
-      });
-    </script>
-  <body>
+  </div>
+
+  <script>
+    const form = document.getElementById('join-form');
+    const email = document.getElementById('slack-email');
+    const token = document.getElementById('slack-token');
+    form.addEventListener('submit', (evt) => {
+      if (!email.value) { evt.preventDefault(); }
+    });
+  </script>
+</body>
 
 </html>
